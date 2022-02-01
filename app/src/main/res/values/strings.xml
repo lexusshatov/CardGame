@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CardGame</string>
+    <string name="home">Home</string>
+    <string name="battle">Battle</string>
+    <string name="grow">Grow</string>
+    <string name="shop">Shop</string>
+    <string name="more">More</string>
 </resources>
