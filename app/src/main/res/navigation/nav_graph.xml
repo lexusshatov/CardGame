@@ -12,7 +12,7 @@
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/home"
-        android:name="com.mouse.cardgame.ui.HomeFragment"
+        android:name="com.mouse.cardgame.ui.home.HomeFragment"
         tools:layout="@layout/fragment_home"
         android:label="HomeFragment" />
 </navigation>

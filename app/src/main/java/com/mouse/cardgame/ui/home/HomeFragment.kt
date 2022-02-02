@@ -1,4 +1,4 @@
-package com.mouse.cardgame.ui
+package com.mouse.cardgame.ui.home
 
 import android.os.Bundle
 import android.view.View
@@ -15,5 +15,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
         binding.lvl.text = "2"
         binding.lvlProgress.progress = 45
+
+        binding.lvlUp.setOnClickListener {
+
+        }
     }
 }
