@@ -1,4 +1,4 @@
-package com.mouse.cardgame
+package com.mouse.cardgame.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

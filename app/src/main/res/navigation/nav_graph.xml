@@ -7,12 +7,12 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.mouse.cardgame.MainActivity"
+        android:name="com.mouse.cardgame.ui.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/home"
-        android:name="com.mouse.cardgame.HomeFragment"
+        android:name="com.mouse.cardgame.ui.HomeFragment"
         tools:layout="@layout/fragment_home"
         android:label="HomeFragment" />
 </navigation>
