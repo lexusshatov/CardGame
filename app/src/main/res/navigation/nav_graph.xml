@@ -13,6 +13,6 @@
     <fragment
         android:id="@+id/home"
         android:name="com.mouse.cardgame.ui.home.HomeFragment"
-        tools:layout="@layout/fragment_home"
-        android:label="HomeFragment" />
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" />
 </navigation>

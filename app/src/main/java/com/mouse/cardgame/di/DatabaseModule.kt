@@ -2,8 +2,8 @@ package com.mouse.cardgame.di
 
 import android.content.Context
 import androidx.room.Room
-import com.mouse.cardgame.core.NarutoDao
-import com.mouse.cardgame.core.NarutoDatabase
+import com.mouse.cardgame.core.db.NarutoDao
+import com.mouse.cardgame.core.db.NarutoDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +22,9 @@ object DatabaseModule {
             context,
             NarutoDatabase::class.java,
             "NarutoDatabase"
-        ).build()
+        )
+            .createFromAsset("database/naruto.db")
+            .build()
     }
 
     @Provides
