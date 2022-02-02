@@ -1,4 +1,4 @@
-package com.mouse.cardgame.core
+package com.mouse.cardgame.core.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
@@ -8,10 +8,13 @@ import com.mouse.cardgame.data.User
 interface NarutoDao {
 
     @Query("SELECT CASE WHEN EXISTS (SELECT * FROM User WHERE name = :name) THEN '1' ELSE '0' END")
-    fun isExist(name: String): Boolean
+    suspend fun isExist(name: String): Boolean
 
     @Query("SELECT * FROM User WHERE name = :name")
-    fun getByName(name: String): User
+    suspend fun getUser(name: String): User
+
+    @Query("SELECT * FROM User WHERE name = :name")
+    fun getLiveUser(name: String): LiveData<User>
 
     @Query("SELECT UserLevel.expected_experience FROM UserLevel WHERE lvl = :lvl")
     suspend fun getExpectedExperience(lvl: Int): Long

@@ -1,4 +1,4 @@
-package com.mouse.cardgame.core
+package com.mouse.cardgame.core.repository
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -20,7 +20,7 @@ class UserPreferences @Inject constructor(
 
     override fun setUsername(username: String) {
         preferences.edit {
-            putString(USER_PREFERENCES, username)
+            putString(KEY_USERNAME, username)
         }
     }
 

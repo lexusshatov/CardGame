@@ -4,23 +4,19 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mouse.cardgame.core.NarutoDao
-import com.mouse.cardgame.core.UserRepository
+import com.mouse.cardgame.core.db.NarutoDao
+import com.mouse.cardgame.core.repository.UserRepository
 import com.mouse.cardgame.data.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val narutoDao: NarutoDao,
     private val userRepository: UserRepository,
 ) : ViewModel() {
-
-    private val scope: CoroutineContext = Dispatchers.IO + SupervisorJob()
 
     private val _user = MutableLiveData<User>()
     val user: LiveData<User>
@@ -32,14 +28,14 @@ class LoginViewModel @Inject constructor(
 
     fun login(username: String) {
         if (!validateUsername(username)) return
-        
-        viewModelScope.launch(scope) {
+
+        viewModelScope.launch(Dispatchers.IO) {
             if (!narutoDao.isExist(username)) {
                 val user = User(username)
                 narutoDao.addUser(user)
             }
-            _user.postValue(narutoDao.getByName(username))
             userRepository.setUsername(username)
+            _user.postValue(narutoDao.getUser(username))
         }
     }
 

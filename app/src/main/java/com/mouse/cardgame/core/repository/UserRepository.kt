@@ -1,4 +1,4 @@
-package com.mouse.cardgame.core
+package com.mouse.cardgame.core.repository
 
 interface UserRepository {
     fun getUsername(): String

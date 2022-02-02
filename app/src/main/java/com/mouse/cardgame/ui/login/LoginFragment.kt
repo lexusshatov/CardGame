@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.mouse.cardgame.R
 import com.mouse.cardgame.databinding.FragmentLoginBinding
@@ -18,8 +19,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.user.observe(viewLifecycleOwner) { user ->
-            println("USER: $user")
+        viewModel.user.observe(viewLifecycleOwner) {
+            findNavController().navigate(
+                LoginFragmentDirections.actionLoginFragmentToNavGraph())
         }
 
         binding.login.setOnClickListener {

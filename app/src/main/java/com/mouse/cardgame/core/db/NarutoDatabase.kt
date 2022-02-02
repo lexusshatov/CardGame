@@ -1,4 +1,4 @@
-package com.mouse.cardgame.core
+package com.mouse.cardgame.core.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
