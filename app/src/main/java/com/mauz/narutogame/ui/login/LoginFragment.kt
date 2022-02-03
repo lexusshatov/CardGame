@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
@@ -24,6 +25,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         result.idpResponse?.error?.message?.let { error ->
             Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
         }
+        // FIXME: 03.02.2022 authorization may be failed
+        viewModel.login("username")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,8 +46,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             signInLauncher.launch(signInIntent)
         }
 
-//        viewModel.login.observe(viewLifecycleOwner) {
-//            findNavController().navigate(it)
-//        }
+        viewModel.login.observe(viewLifecycleOwner) {
+            findNavController().navigate(it)
+            requireActivity().finish()
+        }
     }
 }

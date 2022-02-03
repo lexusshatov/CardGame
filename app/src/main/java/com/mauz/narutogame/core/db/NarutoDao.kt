@@ -22,7 +22,7 @@ interface NarutoDao {
     @Update
     suspend fun updateUser(user: User)
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addUser(user: User)
 
     @Delete

@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavDirections
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.mauz.narutogame.core.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -20,11 +19,10 @@ class LoginViewModel @Inject constructor(
     private val _login = MutableLiveData<NavDirections>()
     val login: LiveData<NavDirections> = _login
 
-    fun login(account: GoogleSignInAccount) {
+    fun login(username: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            println(account.idToken)
-            userRepository.setToken(account.idToken!!)
-            val direction = LoginFragmentDirections.actionLoginFragmentToNavGraph()
+            userRepository.setToken(username)
+            val direction = LoginFragmentDirections.actionLoginFragmentToMainActivity()
             _login.postValue(direction)
         }
     }
