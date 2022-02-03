@@ -1,7 +1,6 @@
 package com.mauz.narutogame.ui
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -9,6 +8,7 @@ import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.mauz.narutogame.R
 import com.mauz.narutogame.databinding.ActivityMainBinding
+import com.mauz.narutogame.util.hideSystemUI
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,5 +23,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         setContentView(binding.root)
 
         binding.bottomNav.setupWithNavController(navController)
+        window.hideSystemUI()
     }
 }
