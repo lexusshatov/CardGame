@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">CardGame</string>
-    <string name="home">Home</string>
-    <string name="battle">Battle</string>
-    <string name="grow">Grow</string>
-    <string name="shop">Shop</string>
-    <string name="more">More</string>
+    <string name="home">Главная</string>
+    <string name="battle">Бой</string>
+    <string name="grow">Рост</string>
+    <string name="shop">Магазин</string>
+    <string name="more">Больше</string>
+    <string name="bag">Сумка</string>
+    <string name="ninja_village">Деревня ниндзя</string>
+    <string name="journey">Путешествие</string>
+    <string name="tailed_beast">Хвостатый зверь</string>
+    <string name="chat">Чат</string>
 </resources>

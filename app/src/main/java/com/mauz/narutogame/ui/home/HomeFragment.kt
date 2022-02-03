@@ -5,10 +5,13 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.mauz.narutogame.R
 import com.mauz.narutogame.core.usecase.GetLevelProgressUseCase
 import com.mauz.narutogame.databinding.FragmentHomeBinding
+import com.mauz.narutogame.util.MarginDecorator
+import com.mauz.narutogame.util.dp
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -20,6 +23,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     @Inject
     lateinit var getLevelProgressUseCase: GetLevelProgressUseCase
+
+    private val adapter = ButtonsAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,5 +41,19 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.lvlUp.setOnClickListener {
             viewModel.addExperience(10L)
         }
+
+        with(binding.buttons) {
+            layoutManager = GridLayoutManager(requireContext(), 2)
+            addItemDecoration(MarginDecorator(horizontal = 10.dp))
+            adapter = this@HomeFragment.adapter
+        }
+
+        adapter.submitList(listOf(
+            getString(R.string.bag),
+            getString(R.string.ninja_village),
+            getString(R.string.journey),
+            getString(R.string.tailed_beast),
+            getString(R.string.chat)
+        ))
     }
 }

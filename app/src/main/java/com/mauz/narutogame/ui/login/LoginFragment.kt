@@ -48,7 +48,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
         viewModel.login.observe(viewLifecycleOwner) {
             findNavController().navigate(it)
-            requireActivity().finish()
+            activity?.finish()
         }
     }
 }
