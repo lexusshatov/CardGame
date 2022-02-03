@@ -14,19 +14,19 @@ class UserPreferences @Inject constructor(
         context.getSharedPreferences(USER_PREFERENCES, Context.MODE_PRIVATE)
     }
 
-    override fun getUsername(): String {
-        return preferences.getString(KEY_USERNAME, "")!!
+    override fun getToken(): String {
+        return preferences.getString(KEY_TOKEN, "")!!
     }
 
-    override fun setUsername(username: String) {
+    override fun setToken(token: String) {
         preferences.edit {
-            putString(KEY_USERNAME, username)
+            putString(KEY_TOKEN, token)
         }
     }
 
 
     private companion object {
         const val USER_PREFERENCES = "user_preferences"
-        const val KEY_USERNAME = "username"
+        const val KEY_TOKEN = "username"
     }
 }

@@ -18,7 +18,7 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
 
     val user: LiveData<User>
-        get() = narutoDao.getLiveUser(userRepository.getUsername())
+        get() = narutoDao.getLiveUser(userRepository.getToken())
 
     fun addExperience(experience: Long) {
         addExperienceUseCase(experience, viewModelScope)

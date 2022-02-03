@@ -5,14 +5,18 @@
     android:id="@+id/login_graph"
     app:startDestination="@id/loginFragment">
 
+    <include app:graph="@navigation/nav_graph" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.mauz.narutogame.ui.login.LoginFragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login">
+        tools:layout="@layout/fragment_login"
+        android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_nav_graph"
             app:destination="@id/nav_graph" />
     </fragment>
-    <include app:graph="@navigation/nav_graph" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.mauz.narutogame.ui.login.LoginActivity"
+        android:label="LoginActivity" />
 </navigation>

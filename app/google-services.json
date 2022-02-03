@@ -14,7 +14,31 @@
       },
       "oauth_client": [
         {
-          "client_id": "152142413702-16fgdr5lemsfjf42krrkqeehue2d4d4u.apps.googleusercontent.com",
+          "client_id": "152142413702-3oilthct6453n1ckeht1ga6pqj44tq86.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mauz.narutogame",
+            "certificate_hash": "7637da0c7f6aa6ea6d2198ea78eebb6342293a49"
+          }
+        },
+        {
+          "client_id": "152142413702-8q2t3b4ldofh7krd0oo274l1qrhd7rar.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mauz.narutogame",
+            "certificate_hash": "d2c0464a2278f6b73aaa5862fb42e6886711cda2"
+          }
+        },
+        {
+          "client_id": "152142413702-v1aslmt913b3cajiqnf9g09e23n8e188.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mauz.narutogame",
+            "certificate_hash": "602dd416360d7c3009deac0b8de3bb2a03d0e2ea"
+          }
+        },
+        {
+          "client_id": "152142413702-hf8fim021tsupv9c5ck1nq373qpquh6t.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +51,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "152142413702-16fgdr5lemsfjf42krrkqeehue2d4d4u.apps.googleusercontent.com",
+              "client_id": "152142413702-hf8fim021tsupv9c5ck1nq373qpquh6t.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

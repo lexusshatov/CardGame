@@ -10,7 +10,7 @@ class AddExperienceUseCase @Inject constructor(
 ) : UseCase<Unit, Long>() {
 
     override suspend fun run(params: Long) {
-        val user = narutoDao.getUser(userRepository.getUsername())
+        val user = narutoDao.getUser(userRepository.getToken())
         val actualExperience = user.experience + params
         val expectedExperience = narutoDao.getExpectedExperience(user.lvl)
         val updatedUser = if (actualExperience >= expectedExperience) {
