@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         setContentView(binding.root)
 
         binding.bottomNav.setupWithNavController(navController)
+    }
+
+    override fun onResume() {
+        super.onResume()
         window.hideSystemUI()
     }
 }
