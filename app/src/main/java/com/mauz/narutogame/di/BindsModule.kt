@@ -1,6 +1,6 @@
 package com.mauz.narutogame.di
 
-import com.mauz.narutogame.core.repository.UserFirebaseRepository
+import com.mauz.narutogame.core.repository.cloud.UserFirebaseRepository
 import com.mauz.narutogame.core.repository.UserRepository
 import dagger.Binds
 import dagger.Module
