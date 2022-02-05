@@ -23,7 +23,7 @@ object DatabaseModule {
             NarutoDatabase::class.java,
             "NarutoDatabase"
         )
-            .createFromAsset("database/naruto.db")
+            .fallbackToDestructiveMigration()
             .build()
     }
 

@@ -31,10 +31,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             .placeholder(R.drawable.ic_user)
             .into(binding.icon)
 
-        binding.lvlUp.setOnClickListener {
-            //viewModel.addExperience(10L)
-        }
-
         with(binding.buttons) {
             layoutManager = GridLayoutManager(requireContext(), 2)
             addItemDecoration(MarginDecorator(horizontal = 10.dp))

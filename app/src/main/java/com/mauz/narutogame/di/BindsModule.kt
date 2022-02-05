@@ -1,6 +1,6 @@
 package com.mauz.narutogame.di
 
-import com.mauz.narutogame.core.repository.UserPreferences
+import com.mauz.narutogame.core.repository.UserFirebaseRepository
 import com.mauz.narutogame.core.repository.UserRepository
 import dagger.Binds
 import dagger.Module
@@ -14,5 +14,5 @@ import dagger.hilt.components.SingletonComponent
 interface BindsModule {
 
     @Binds
-    fun bindUserRepository(userPreferences: UserPreferences): UserRepository
+    fun bindUserRepository(userFirebaseRepository: UserFirebaseRepository): UserRepository
 }

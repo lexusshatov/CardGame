@@ -10,4 +10,13 @@
     <string name="journey">Путешествие</string>
     <string name="tailed_beast">Хвостатый зверь</string>
     <string name="chat">Чат</string>
+    <string name="character">Персонаж</string>
+    <string name="helmet">Шлем</string>
+    <string name="chestplate">Нагрудник</string>
+    <string name="leggings">Поножи</string>
+    <string name="boots">Сапоги</string>
+    <string name="bracers">Наручи</string>
+    <string name="accessory">Аксессуар</string>
+    <string name="weapon">Оружие</string>
+    <string name="additional_weapon">Дополнительное оружие</string>
 </resources>

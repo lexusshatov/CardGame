@@ -1,6 +1,9 @@
 package com.mauz.narutogame.core.repository
 
+import com.mauz.narutogame.data.User
+
+
 interface UserRepository {
-    fun getToken(): String
-    fun setToken(token: String)
+    fun getUser(): User
+    fun setUser(user: User)
 }
