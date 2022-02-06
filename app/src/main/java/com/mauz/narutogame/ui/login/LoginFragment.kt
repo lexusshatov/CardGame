@@ -11,7 +11,6 @@ import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.mauz.narutogame.R
 import com.mauz.narutogame.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class LoginFragment : Fragment(R.layout.fragment_login) {
@@ -21,17 +20,13 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private val signInLauncher = registerForActivityResult(
         FirebaseAuthUIActivityResultContract()
-    ) {
-        runCatching { viewModel.login() }
-            .getOrElse { Timber.d(it, "Authorization failed") }
-    }
+    ) { viewModel.login() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.login.observe(viewLifecycleOwner) {
             findNavController().navigate(it)
-            activity?.finish()
         }
 
         val providers = arrayListOf(

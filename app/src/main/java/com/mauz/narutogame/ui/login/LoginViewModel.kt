@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavDirections
+import com.mauz.narutogame.core.LoginResult
 import com.mauz.narutogame.core.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -21,8 +22,10 @@ class LoginViewModel @Inject constructor(
 
     fun login() {
         viewModelScope.launch(Dispatchers.IO) {
-            userRepository.login()
-            val direction = LoginFragmentDirections.actionLoginFragmentToMainActivity()
+            val direction = when (userRepository.login()) {
+                LoginResult.Success -> LoginFragmentDirections.actionLoginFragmentToMainActivity()
+                LoginResult.UserNotRegistered -> LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+            }
             _login.postValue(direction)
         }
     }

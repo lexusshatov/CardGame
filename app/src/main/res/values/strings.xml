@@ -19,4 +19,6 @@
     <string name="accessory">Аксессуар</string>
     <string name="weapon">Оружие</string>
     <string name="additional_weapon">Дополнительное оружие</string>
+    <string name="register">Регистрация</string>
+    <string name="ok">ОК</string>
 </resources>
