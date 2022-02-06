@@ -1,4 +1,4 @@
-package com.mauz.narutogame.data.cloud
+package com.mauz.narutogame.core.data.cloud
 
 /**
  * @constructor Must have a no-argument constructor for deserializing

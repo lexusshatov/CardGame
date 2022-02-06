@@ -44,6 +44,22 @@ inline fun <reified T> DocumentReference.toFlow(): Flow<T> {
     return flow
 }
 
+inline fun <reified T : Any> CollectionReference.toFlow(): Flow<List<T>> {
+    val flow = MutableSharedFlow<List<T>>(
+        extraBufferCapacity = 1,
+        onBufferOverflow = BufferOverflow.DROP_OLDEST
+    )
+    addSnapshotListener { snapshot, error ->
+        if (error != null) throw error
+        if (snapshot == null) throw DocumentNotFoundException()
+        val list = snapshot.documents.map {
+            it.toObject(T::class.java)!!
+        }
+        flow.tryEmit(list)
+    }
+    return flow
+}
+
 suspend inline fun <reified T : Any> Query.getAll(): List<T> =
     suspendCoroutine { continuation ->
         get()

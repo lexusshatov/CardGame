@@ -1,9 +1,10 @@
 package com.mauz.narutogame.core.repository
 
-import com.mauz.narutogame.data.Item
+import com.mauz.narutogame.core.data.InventoryItem
+import kotlinx.coroutines.flow.Flow
 
 interface InventoryRepository {
-    fun getInventory() : List<Item>
-    fun addItem(item: Item)
-    fun removeItem(item: Item)
+    fun getInventory(): Flow<List<InventoryItem>>
+    fun addItem(inventoryItem: InventoryItem)
+    fun removeItem(inventoryItem: InventoryItem)
 }

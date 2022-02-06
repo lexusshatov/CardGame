@@ -11,7 +11,7 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
 ) : ListAdapter<T, BaseAdapter<T, VB>.ViewHolder>(DefaultItemDiffCallback<T>()) {
 
     abstract val viewBindingProvider: (LayoutInflater, ViewGroup) -> VB
-    abstract val onBind: (T, VB) -> Unit
+    abstract fun bind(item: T, binding: VB)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = viewBindingProvider(LayoutInflater.from(parent.context), parent)
@@ -25,7 +25,7 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
     inner class ViewHolder(private val binding: VB) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: T) {
-            onBind(item, binding)
+            bind(item, binding)
             itemView.setOnClickListener { onClick(item) }
         }
     }

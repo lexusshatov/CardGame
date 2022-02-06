@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/character_background">
+    android:background="@drawable/character_background"
+    android:padding="20dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/helmet"
@@ -15,9 +17,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:src="@drawable/ic_helmet"
-            android:contentDescription="@string/helmet" />
+            android:contentDescription="@string/helmet"
+            android:src="@drawable/ic_helmet" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -31,9 +32,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:src="@drawable/ic_chestplate"
-            android:contentDescription="@string/chestplate" />
+            android:contentDescription="@string/chestplate"
+            android:src="@drawable/ic_chestplate" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -47,9 +47,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:src="@drawable/ic_leggings"
-            android:contentDescription="@string/leggings" />
+            android:contentDescription="@string/leggings"
+            android:src="@drawable/ic_leggings" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -63,9 +62,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:src="@drawable/ic_boots"
-            android:contentDescription="@string/boots" />
+            android:contentDescription="@string/boots"
+            android:src="@drawable/ic_boots" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -79,9 +77,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:src="@drawable/ic_bracers"
-            android:contentDescription="@string/bracers" />
+            android:contentDescription="@string/bracers"
+            android:src="@drawable/ic_bracers" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -95,9 +92,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:src="@drawable/ic_accessory"
-            android:contentDescription="@string/accessory" />
+            android:contentDescription="@string/accessory"
+            android:src="@drawable/ic_accessory" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -111,9 +107,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:src="@drawable/ic_weapon"
-            android:contentDescription="@string/weapon" />
+            android:contentDescription="@string/weapon"
+            android:src="@drawable/ic_weapon" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -127,9 +122,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:src="@drawable/ic_additional_weapon"
-            android:contentDescription="@string/additional_weapon" />
+            android:contentDescription="@string/additional_weapon"
+            android:src="@drawable/ic_additional_weapon" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -137,11 +131,23 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="10dp"
+        android:contentDescription="@string/character"
         android:src="@drawable/ic_baseline_man_24"
         app:layout_constraintBottom_toBottomOf="@+id/boots"
         app:layout_constraintEnd_toStartOf="@+id/bracers"
         app:layout_constraintStart_toEndOf="@+id/helmet"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/character" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/inventory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boots"
+        app:spanCount="6"
+        tools:itemCount="30"
+        tools:listitem="@layout/inventory_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

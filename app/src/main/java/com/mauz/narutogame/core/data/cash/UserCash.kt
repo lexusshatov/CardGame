@@ -1,4 +1,4 @@
-package com.mauz.narutogame.data.cash
+package com.mauz.narutogame.core.data.cash
 
 import android.net.Uri
 import androidx.room.ColumnInfo

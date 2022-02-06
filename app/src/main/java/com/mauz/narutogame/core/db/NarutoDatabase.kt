@@ -3,7 +3,7 @@ package com.mauz.narutogame.core.db
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.mauz.narutogame.data.cash.UserCash
+import com.mauz.narutogame.core.data.cash.UserCash
 
 @Database(entities = [UserCash::class], version = 2)
 @TypeConverters(Converter::class)

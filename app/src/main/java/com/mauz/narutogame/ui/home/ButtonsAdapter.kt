@@ -11,7 +11,8 @@ class ButtonsAdapter : BaseAdapter<String, ButtonItemBinding>() {
         { inflater, container ->
             ButtonItemBinding.inflate(inflater, container, false)
         }
-    override val onBind: (String, ButtonItemBinding) -> Unit = { text, binding ->
-        binding.button.text = text
+
+    override fun bind(item: String, binding: ButtonItemBinding) {
+        binding.button.text = item
     }
 }

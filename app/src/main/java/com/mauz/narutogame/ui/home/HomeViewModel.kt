@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.mauz.narutogame.core.repository.UserRepository
-import com.mauz.narutogame.data.User
+import com.mauz.narutogame.core.data.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
