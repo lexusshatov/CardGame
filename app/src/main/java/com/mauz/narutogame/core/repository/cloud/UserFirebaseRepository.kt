@@ -19,33 +19,26 @@ import javax.inject.Inject
 class UserFirebaseRepository @Inject constructor() : UserRepository {
 
     private val firebaseUser = Firebase.auth.currentUser!!
+    private val users = Firebase.firestore.collection("users")
+    private val user = users.document(firebaseUser.uid)
 
     override suspend fun register(name: String): RegisterState {
-        val isNameExist = Firebase.firestore.collection("users")
-            .whereEqualTo("name", name)
+        val isNameExist = users.whereEqualTo("name", name)
             .getAll<UserCloud>()
             .any { it.name == name }
         return if (isNameExist) RegisterState.NameAlreadyExist
         else {
-            val initUser = UserCloud(
-                lvl = 1,
-                name = name
-            )
-            Firebase.firestore.collection("users")
-                .document(firebaseUser.uid)
-                .setResult(initUser)
-
+            val initUser = UserCloud(lvl = 1, name = name)
+            user.setResult(initUser)
             RegisterState.Success
         }
     }
 
     override suspend fun login(): LoginState {
-        var isUserExist = true
-        runCatching {
-            Firebase.firestore.collection("users")
-                .document(firebaseUser.uid)
-                .getResult<UserCloud>()
-        }.getOrElse { isUserExist = false }
+        val isUserExist = runCatching {
+            user.getResult<UserCloud>()
+            true
+        }.getOrDefault(false)
         return if (isUserExist) LoginState.Success
         else LoginState.UserNotRegistered
     }
@@ -55,15 +48,11 @@ class UserFirebaseRepository @Inject constructor() : UserRepository {
     }
 
     override fun getUser(): Flow<User> {
-        return Firebase.firestore.collection("users")
-            .document(firebaseUser.uid)
-            .toFlow<UserCloud>()
+        return user.toFlow<UserCloud>()
             .map { userCloud ->
-                User(
-                    name = userCloud.name,
+                User(name = userCloud.name,
                     photo = firebaseUser.photoUrl,
-                    lvl = userCloud.lvl
-                )
+                    lvl = userCloud.lvl)
             }
     }
 

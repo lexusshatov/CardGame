@@ -12,10 +12,11 @@
     app:strokeColor="@color/light_gray"
     app:strokeWidth="3dp">
 
-    <ImageButton
+    <ImageView
         android:id="@+id/icon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         android:contentDescription="@string/inventory_item"
         tools:src="@drawable/ic_item" />
 

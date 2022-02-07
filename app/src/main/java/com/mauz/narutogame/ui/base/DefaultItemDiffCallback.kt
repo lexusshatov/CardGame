@@ -1,4 +1,4 @@
-package com.mauz.narutogame.util
+package com.mauz.narutogame.ui.base
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil

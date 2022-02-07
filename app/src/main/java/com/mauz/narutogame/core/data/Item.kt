@@ -1,6 +1,7 @@
 package com.mauz.narutogame.core.data
 
-data class InventoryItem(
+data class Item(
+    val id: String,
     val count: Int,
-    val icon: String
+    val icon: String,
 )

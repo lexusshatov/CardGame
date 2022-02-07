@@ -11,7 +11,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.mauz.narutogame.R
 import com.mauz.narutogame.databinding.FragmentHomeBinding
-import com.mauz.narutogame.util.MarginDecorator
+import com.mauz.narutogame.ui.base.MarginDecorator
 import com.mauz.narutogame.util.dp
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="inventory_item">60dp</dimen>
+    <dimen name="inventory_item">54dp</dimen>
 </resources>

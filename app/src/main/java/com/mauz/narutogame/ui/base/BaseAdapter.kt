@@ -1,4 +1,4 @@
-package com.mauz.narutogame.util
+package com.mauz.narutogame.ui.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
 abstract class BaseAdapter<T, VB : ViewBinding>(
-    private val onClick: (T) -> Unit = {},
+    protected val onClick: (T) -> Unit = {},
 ) : ListAdapter<T, BaseAdapter<T, VB>.ViewHolder>(DefaultItemDiffCallback<T>()) {
 
     abstract val viewBindingProvider: (LayoutInflater, ViewGroup) -> VB
@@ -22,7 +22,7 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
         holder.bind(currentList[position])
     }
 
-    inner class ViewHolder(private val binding: VB) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: VB) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: T) {
             bind(item, binding)

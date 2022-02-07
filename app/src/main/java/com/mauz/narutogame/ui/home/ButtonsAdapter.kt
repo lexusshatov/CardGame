@@ -3,7 +3,7 @@ package com.mauz.narutogame.ui.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.mauz.narutogame.databinding.ButtonItemBinding
-import com.mauz.narutogame.util.BaseAdapter
+import com.mauz.narutogame.ui.base.BaseAdapter
 
 class ButtonsAdapter : BaseAdapter<String, ButtonItemBinding>() {
 

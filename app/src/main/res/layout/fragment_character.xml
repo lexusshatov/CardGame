@@ -128,6 +128,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="10dp"
@@ -149,5 +150,14 @@
         app:spanCount="6"
         tools:itemCount="30"
         tools:listitem="@layout/inventory_item" />
+
+    <Button
+        android:id="@+id/testaddbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEST_ADD_ITEM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
