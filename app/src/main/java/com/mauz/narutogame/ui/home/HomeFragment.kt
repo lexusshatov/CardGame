@@ -58,10 +58,5 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     )
                 )
         }
-
-        // FIXME: 05.02.2022 delete only for test
-        binding.signOut.setOnClickListener {
-            Firebase.auth.signOut()
-        }
     }
 }

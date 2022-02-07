@@ -31,7 +31,7 @@ class CharacterFragment : Fragment(R.layout.fragment_character) {
             adapter.submitList(it)
         }
 
-        //TODO delete test
+        //FIXME delete test
         binding.testaddbutton.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
                 val randomId = (1..11).random().toString()

@@ -155,7 +155,7 @@
         android:id="@+id/testaddbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TEST_ADD_ITEM"
+        android:text="test add 5 random items"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
