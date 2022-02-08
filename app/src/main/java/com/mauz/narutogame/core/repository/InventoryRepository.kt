@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 interface InventoryRepository {
     fun getInventory(): Flow<List<Item>>
     suspend fun addItem(id: String, count: Int = 1)
-    suspend fun removeItem(item: Item)
+    suspend fun removeItem(id: String, count: Int = 1)
 }

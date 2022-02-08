@@ -10,6 +10,7 @@ import com.mauz.narutogame.core.data.cloud.ItemCloud
 import com.mauz.narutogame.core.data.cloud.ItemInfoCloud
 import com.mauz.narutogame.core.repository.InventoryRepository
 import com.mauz.narutogame.util.getResult
+import com.mauz.narutogame.util.now
 import com.mauz.narutogame.util.setResult
 import com.mauz.narutogame.util.toFlow
 import kotlinx.coroutines.flow.Flow
@@ -46,7 +47,15 @@ class InventoryFirebaseRepository @Inject constructor() : InventoryRepository {
         itemReference.setResult(item)
     }
 
-    override suspend fun removeItem(item: Item) {
-        TODO("Not yet implemented")
+    override suspend fun removeItem(id: String, count: Int) {
+        val itemReference = inventory.document(id)
+        runCatching {
+            val foundItem = itemReference.getResult<ItemCloud>()
+            if (foundItem.count == count) {
+                itemReference.delete()
+            } else {
+                itemReference.update("count", foundItem.count - count)
+            }.now()
+        }.getOrThrow()
     }
 }

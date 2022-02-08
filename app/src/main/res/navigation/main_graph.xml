@@ -18,6 +18,20 @@
         android:id="@+id/character"
         android:name="com.mauz.narutogame.ui.character.CharacterFragment"
         android:label="CharacterFragment"
-        tools:layout="@layout/fragment_character" />
+        tools:layout="@layout/fragment_character">
+        <action
+            android:id="@+id/action_character_to_removeItemDialog"
+            app:destination="@id/removeItemDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/removeItemDialog"
+        android:name="com.mauz.narutogame.ui.dialog.RemoveItemDialog"
+        android:label="RemoveItemDialog"
+        tools:layout="@layout/dialog_remove_item">
+        <argument
+            android:name="item"
+            app:argType="com.mauz.narutogame.core.data.Item" />
+    </dialog>
+
 
 </navigation>

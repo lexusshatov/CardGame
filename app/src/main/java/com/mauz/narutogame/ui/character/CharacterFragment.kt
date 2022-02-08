@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.mauz.narutogame.R
 import com.mauz.narutogame.core.repository.cloud.InventoryFirebaseRepository
@@ -31,11 +32,19 @@ class CharacterFragment : Fragment(R.layout.fragment_character) {
             adapter.submitList(it)
         }
 
-        //FIXME delete test
+        //FIXME add test
         binding.testaddbutton.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
                 val randomId = (1..11).random().toString()
                 InventoryFirebaseRepository().addItem(randomId, 5)
+            }
+        }
+        // FIXME: 08.02.2022 delete test
+        binding.testremovebutton.setOnClickListener {
+            println(adapter.focus)
+            adapter.focus?.let { item ->
+                val direction = CharacterFragmentDirections.actionCharacterToRemoveItemDialog(item)
+                findNavController().navigate(direction)
             }
         }
     }

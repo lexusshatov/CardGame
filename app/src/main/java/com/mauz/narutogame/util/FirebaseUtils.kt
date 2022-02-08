@@ -1,5 +1,6 @@
 package com.mauz.narutogame.util
 
+import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.Query
@@ -70,3 +71,8 @@ suspend inline fun <reified T : Any> Query.getAll(): List<T> =
             }
             .addOnFailureListener { continuation.resumeWithException(it) }
     }
+
+suspend inline fun Task<Void>.now() = suspendCoroutine<Unit> { continuation ->
+    addOnSuccessListener { continuation.resume(Unit) }
+    addOnFailureListener { continuation.resumeWithException(it) }
+}

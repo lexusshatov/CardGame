@@ -155,9 +155,16 @@
         android:id="@+id/testaddbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="test add 5 random items"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="test add random"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/testremovebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="remove"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,4 +23,7 @@
     <string name="ok">ОК</string>
     <string name="name_already_used">Данное имя уже используется</string>
     <string name="inventory_item">Предмет инвенторя</string>
+    <string name="are_you_sure_about_delete_this_item">Вы действительно хотите удалить предмет?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
 </resources>
