@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/drawable/ic__9491301471556862154.xml" value="0.178125" />
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/drawable/ic_baseline_headphones_24.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2703125" />
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/drawable/ic_chestplate.xml" value="0.15520833333333334" />
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/drawable/ic_helmet.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/drawable/ic_item.xml" value="0.178125" />
@@ -12,7 +13,7 @@
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/drawable/ic_user.xml" value="0.11875" />
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/layout/activity_login.xml" value="0.11458333333333333" />
-        <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/layout/button_item.xml" value="1.2171052631578947" />
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/layout/dialog_error.xml" value="0.1" />
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/layout/dialog_info.xml" value="0.2" />
@@ -22,7 +23,8 @@
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/layout/fragment_register.xml" value="0.264" />
         <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/layout/inventory_item.xml" value="1.2" />
-        <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/menu/bottom_menu.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/menu/add_menu.xml" value="0.13125" />
+        <entry key="..\:/Users/lexus/AndroidStudioProjects/CardGame/app/src/main/res/menu/bottom_menu.xml" value="0.536" />
       </map>
     </option>
   </component>

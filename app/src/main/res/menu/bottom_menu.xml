@@ -1,34 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/home"
         android:icon="@drawable/ic_baseline_home_24"
-        android:visible="true"
-        android:enabled="true"
         android:title="@string/home" />
     <item
         android:id="@+id/battle"
         android:icon="@drawable/ic_baseline_accessible_forward_24"
-        android:visible="true"
-        android:enabled="true"
         android:title="@string/battle" />
     <item
         android:id="@+id/character"
         android:icon="@drawable/ic_baseline_man_24"
-        android:visible="true"
-        android:enabled="true"
         android:title="@string/character" />
     <item
         android:id="@+id/shop"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
-        android:visible="true"
-        android:enabled="true"
         android:title="@string/shop" />
     <item
         android:id="@+id/more"
         android:icon="@drawable/ic_baseline_more_horiz_24"
-        android:visible="true"
-        android:enabled="true"
         android:title="@string/more" />
 </menu>

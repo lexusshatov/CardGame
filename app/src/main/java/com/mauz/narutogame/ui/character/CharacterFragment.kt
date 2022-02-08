@@ -41,7 +41,6 @@ class CharacterFragment : Fragment(R.layout.fragment_character) {
         }
         // FIXME: 08.02.2022 delete test
         binding.testremovebutton.setOnClickListener {
-            println(adapter.focus)
             adapter.focus?.let { item ->
                 val direction = CharacterFragmentDirections.actionCharacterToRemoveItemDialog(item)
                 findNavController().navigate(direction)
