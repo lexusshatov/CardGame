@@ -32,6 +32,7 @@
             android:exported="false"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.CardGame.Fullscreen"
             tools:ignore="LockedOrientationActivity" />
 
     </application>

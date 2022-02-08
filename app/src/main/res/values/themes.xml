@@ -35,4 +35,8 @@
     <style name="RoundedCornersDialog" parent="Theme.MaterialComponents.Light.Dialog">
         <item name="dialogCornerRadius">24dp</item>
     </style>
+
+    <style name="Theme.CardGame.Fullscreen" parent="Theme.CardGame">
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>
