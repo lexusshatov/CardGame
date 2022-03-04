@@ -1,14 +1,11 @@
 package com.mauz.narutogame.core.repository.cloud
 
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.CollectionReference
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import com.mauz.narutogame.core.LoginState
 import com.mauz.narutogame.core.RegisterState
 import com.mauz.narutogame.core.data.User
+import com.mauz.narutogame.core.data.cloud.FirebaseCollections.firebaseUser
+import com.mauz.narutogame.core.data.cloud.FirebaseCollections.user
+import com.mauz.narutogame.core.data.cloud.FirebaseCollections.users
 import com.mauz.narutogame.core.data.cloud.UserCloud
 import com.mauz.narutogame.core.repository.UserRepository
 import com.mauz.narutogame.util.getAll
@@ -20,13 +17,6 @@ import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class UserFirebaseRepository @Inject constructor() : UserRepository {
-
-    private val firebaseUser: FirebaseUser
-        get() = Firebase.auth.currentUser!!
-    private val users: CollectionReference
-        get() = Firebase.firestore.collection("users")
-    private val user: DocumentReference
-        get() = users.document(firebaseUser.uid)
 
     override suspend fun register(name: String): RegisterState {
         val isNameExist = users.whereEqualTo("name", name)

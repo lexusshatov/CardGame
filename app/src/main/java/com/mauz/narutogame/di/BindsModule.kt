@@ -3,7 +3,6 @@ package com.mauz.narutogame.di
 import com.mauz.narutogame.core.repository.InventoryRepository
 import com.mauz.narutogame.core.repository.ResourceProvider
 import com.mauz.narutogame.core.repository.UserRepository
-import com.mauz.narutogame.core.repository.cash.ResourceProviderCash
 import com.mauz.narutogame.core.repository.cloud.InventoryFirebaseRepository
 import com.mauz.narutogame.core.repository.cloud.UserFirebaseRepository
 import dagger.Binds
@@ -21,7 +20,7 @@ interface BindsModule {
     fun bindUserRepository(impl: UserFirebaseRepository): UserRepository
 
     @Binds
-    fun bindResourceRepository(impl: ResourceProviderCash): ResourceProvider
+    fun bindResourceRepository(impl: ResourceProvider.Base): ResourceProvider
 
     @Binds
     fun bindInventoryRepository(impl: InventoryFirebaseRepository): InventoryRepository

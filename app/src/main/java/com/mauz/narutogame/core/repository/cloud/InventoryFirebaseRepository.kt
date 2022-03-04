@@ -1,11 +1,9 @@
 package com.mauz.narutogame.core.repository.cloud
 
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.mauz.narutogame.core.data.Item
+import com.mauz.narutogame.core.data.cloud.FirebaseCollections.inventory
 import com.mauz.narutogame.core.data.cloud.ItemCloud
 import com.mauz.narutogame.core.data.cloud.ItemInfoCloud
 import com.mauz.narutogame.core.repository.InventoryRepository
@@ -18,13 +16,6 @@ import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class InventoryFirebaseRepository @Inject constructor() : InventoryRepository {
-
-    private val firebaseUser: FirebaseUser
-        get() = Firebase.auth.currentUser!!
-    private val inventory: CollectionReference
-        get() = Firebase.firestore.collection("users")
-            .document(firebaseUser.uid)
-            .collection("inventory")
 
     override fun getInventory(): Flow<List<Item>> {
         return inventory.toFlow<ItemCloud>()

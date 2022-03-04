@@ -27,4 +27,9 @@ abstract class FocusAdapter<T, VB : ViewBinding> : BaseAdapter<T, VB>() {
             onClick(item)
         }
     }
+
+    override fun submitList(list: List<T>?) {
+        super.submitList(list)
+        focusedPosition = RecyclerView.NO_POSITION
+    }
 }
